@@ -1,0 +1,11 @@
+////////////////////////////////
+// INSTALLATION SETUP STRINGS //
+////////////////////////////////
+@0 		= ~Multiplayer Tweaks~
+@1		= ~Argent's DLC Merger is required before mods can be installed on this game.~
+@2		= ~This mod requires BGEE, SoD, BG2EE or EET~
+@3		= ~This component requires BG1EE or EET~
+@4		= ~This component requires SoD or EET~
+@5		= ~This component requires BG2EE or EET~
+
+@10		= ~Take it outside - mobs follow through doors~
