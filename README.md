@@ -3,6 +3,6 @@
 ---                by Lauriel                 ---
 -------------------------------------------------
 
-This mod requires BGEE, SoD, BG2EE or EET
+This mod requires BGEE, BG2EE or EET
 
-Multiplayer fixes for BGEE, SoD, BG2EE, and EET
+Multiplayer fixes for BGEE, BG2EE and EET
