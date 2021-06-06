@@ -3,73 +3,86 @@
 ////////////////////////////////////////////////////////////
 
 IF
-	Clicked(Player1)
+	Clicked([ANYONE])
+	See(Player1)
+	NumInPartyGT(1)
+	Name("None",Player2)
 	ActuallyInCombat()
 THEN
 	RESPONSE #100
-		ActionOverride(NearestEnemyOf(Player1),EscapeAreaMove("%dest_name%",%x_point%,%y_point%,%orientation%)) 
-		ActionOverride(SecondNearestEnemyOf(Player1),EscapeAreaMove("%dest_name%",%x_pt2%,%y_point%,%orientation%)) 
-		ActionOverride(ThirdNearestEnemyOf(Player1),EscapeAreaMove("%dest_name%",%x_pt3%,%y_point%,%orientation%)) 
-		ActionOverride(FourthNearestEnemyOf(Player1),EscapeAreaMove("%dest_name%",%x_point%,%y_pt2%,%orientation%)) 
-		ActionOverride(FifthNearestEnemyOf(Player1),EscapeAreaMove("%dest_name%",%x_point%,%y_pt3%,%orientation%)) 
+		ActionOverride(NearestEnemyOf(Player1),MoveBetweenAreas("%dest_name%",[%x_pt2%.%y_pt2%],%orientation%)) 
+		ActionOverride(SecondNearestEnemyOf(Player1),MoveBetweenAreas("%dest_name%",[%x_pt2%.%y_pt2%],%orientation%)) 
+		ActionOverride(ThirdNearestEnemyOf(Player1),MoveBetweenAreas("%dest_name%",[%x_pt2%.%y_pt2%],%orientation%)) 
+		ActionOverride(FourthNearestEnemyOf(Player1),MoveBetweenAreas("%dest_name%",[%x_pt2%.%y_pt2%],%orientation%)) 
+		ActionOverride(FifthNearestEnemyOf(Player1),MoveBetweenAreas("%dest_name%",[%x_pt2%.%y_pt2%],%orientation%)) 
 END
 							
 IF
-	Clicked(Player2)
+	Clicked([ANYONE])
+	See(Player2)
+	Name("None",Player2)
 	ActuallyInCombat()
 THEN
 	RESPONSE #100
-		ActionOverride(NearestEnemyOf(Player2),EscapeAreaMove("%dest_name%",%x_point%,%y_point%,%orientation%)) 
-		ActionOverride(SecondNearestEnemyOf(Player2),EscapeAreaMove("%dest_name%",%x_pt2%,%y_point%,%orientation%)) 
-		ActionOverride(ThirdNearestEnemyOf(Player2),EscapeAreaMove("%dest_name%",%x_pt3%,%y_point%,%orientation%)) 
-		ActionOverride(FourthNearestEnemyOf(Player2),EscapeAreaMove("%dest_name%",%x_point%,%y_pt2%,%orientation%)) 
-		ActionOverride(FifthNearestEnemyOf(Player2),EscapeAreaMove("%dest_name%",%x_point%,%y_pt3%,%orientation%)) 
+		ActionOverride(NearestEnemyOf(Player2),MoveBetweenAreas("%dest_name%",[%x_point%.%y_point%],%orientation%)) 
+		ActionOverride(SecondNearestEnemyOf(Player2),MoveBetweenAreas("%dest_name%",[%x_pt2%.%y_point%],%orientation%)) 
+		ActionOverride(ThirdNearestEnemyOf(Player2),MoveBetweenAreas("%dest_name%",[%x_pt3%.%y_point%],%orientation%)) 
+		ActionOverride(FourthNearestEnemyOf(Player2),MoveBetweenAreas("%dest_name%",[%x_point%.%y_pt2%],%orientation%)) 
+		ActionOverride(FifthNearestEnemyOf(Player2),MoveBetweenAreas("%dest_name%",[%x_point%.%y_pt3%],%orientation%)) 
 END
 
 IF
-	Clicked(Player3)
+	Clicked([ANYONE])
+	See(Player3)
+	Name("None",Player2)
 	ActuallyInCombat()
 THEN
 	RESPONSE #100
-		ActionOverride(NearestEnemyOf(Player3),EscapeAreaMove("%dest_name%",%x_point%,%y_point%,%orientation%)) 
-		ActionOverride(SecondNearestEnemyOf(Player3),EscapeAreaMove("%dest_name%",%x_pt2%,%y_point%,%orientation%)) 
-		ActionOverride(ThirdNearestEnemyOf(Player3),EscapeAreaMove("%dest_name%",%x_pt3%,%y_point%,%orientation%)) 
-		ActionOverride(FourthNearestEnemyOf(Player3),EscapeAreaMove("%dest_name%",%x_point%,%y_pt2%,%orientation%)) 
-		ActionOverride(FifthNearestEnemyOf(Player3),EscapeAreaMove("%dest_name%",%x_point%,%y_pt3%,%orientation%)) 
+		ActionOverride(NearestEnemyOf(Player3),MoveBetweenAreas("%dest_name%",[%x_point%.%y_point%],%orientation%)) 
+		ActionOverride(SecondNearestEnemyOf(Player3),MoveBetweenAreas("%dest_name%",[%x_pt2%.%y_point%],%orientation%)) 
+		ActionOverride(ThirdNearestEnemyOf(Player3),MoveBetweenAreas("%dest_name%",[%x_pt3%.%y_point%],%orientation%)) 
+		ActionOverride(FourthNearestEnemyOf(Player3),MoveBetweenAreas("%dest_name%",[%x_point%.%y_pt2%],%orientation%)) 
+		ActionOverride(FifthNearestEnemyOf(Player3),MoveBetweenAreas("%dest_name%",[%x_point%.%y_pt3%],%orientation%)) 
 END
 
 IF
-	Clicked(Player4)
+	Clicked([ANYONE])
+	See(Player4)
+	Name("None",Player2)
 	ActuallyInCombat()
 THEN
 	RESPONSE #100
-		ActionOverride(NearestEnemyOf(Player4),EscapeAreaMove("%dest_name%",%x_point%,%y_point%,%orientation%)) 
-		ActionOverride(SecondNearestEnemyOf(Player4),EscapeAreaMove("%dest_name%",%x_pt2%,%y_point%,%orientation%)) 
-		ActionOverride(ThirdNearestEnemyOf(Player4),EscapeAreaMove("%dest_name%",%x_pt3%,%y_point%,%orientation%)) 
-		ActionOverride(FourthNearestEnemyOf(Player4),EscapeAreaMove("%dest_name%",%x_point%,%y_pt2%,%orientation%)) 
-		ActionOverride(FifthNearestEnemyOf(Player4),EscapeAreaMove("%dest_name%",%x_point%,%y_pt3%,%orientation%)) 
+		ActionOverride(NearestEnemyOf(Player4),MoveBetweenAreas("%dest_name%",[%x_point%.%y_point%],%orientation%)) 
+		ActionOverride(SecondNearestEnemyOf(Player4),MoveBetweenAreas("%dest_name%",[%x_pt2%.%y_point%],%orientation%)) 
+		ActionOverride(ThirdNearestEnemyOf(Player4),MoveBetweenAreas("%dest_name%",[%x_pt3%.%y_point%],%orientation%)) 
+		ActionOverride(FourthNearestEnemyOf(Player4),MoveBetweenAreas("%dest_name%",[%x_point%.%y_pt2%],%orientation%)) 
+		ActionOverride(FifthNearestEnemyOf(Player4),MoveBetweenAreas("%dest_name%",[%x_point%.%y_pt3%],%orientation%)) 
 END
 
 IF
-	Clicked(Player5)
+	Clicked([ANYONE])
+	See(Player5)
+	Name("None",Player2)
 	ActuallyInCombat()
 THEN
 	RESPONSE #100
-		ActionOverride(NearestEnemyOf(Player5),EscapeAreaMove("%dest_name%",%x_point%,%y_point%,%orientation%)) 
-		ActionOverride(SecondNearestEnemyOf(Player5),EscapeAreaMove("%dest_name%",%x_pt2%,%y_point%,%orientation%)) 
-		ActionOverride(ThirdNearestEnemyOf(Player5),EscapeAreaMove("%dest_name%",%x_pt3%,%y_point%,%orientation%)) 
-		ActionOverride(FourthNearestEnemyOf(Player5),EscapeAreaMove("%dest_name%",%x_point%,%y_pt2%,%orientation%)) 
-		ActionOverride(FifthNearestEnemyOf(Player5),EscapeAreaMove("%dest_name%",%x_point%,%y_pt3%,%orientation%)) 
+		ActionOverride(NearestEnemyOf(Player5),MoveBetweenAreas("%dest_name%",[%x_point%.%y_point%],%orientation%)) 
+		ActionOverride(SecondNearestEnemyOf(Player5),MoveBetweenAreas("%dest_name%",[%x_pt2%.%y_point%],%orientation%)) 
+		ActionOverride(ThirdNearestEnemyOf(Player5),MoveBetweenAreas("%dest_name%",[%x_pt3%.%y_point%],%orientation%)) 
+		ActionOverride(FourthNearestEnemyOf(Player5),MoveBetweenAreas("%dest_name%",[%x_point%.%y_pt2%],%orientation%)) 
+		ActionOverride(FifthNearestEnemyOf(Player5),MoveBetweenAreas("%dest_name%",[%x_point%.%y_pt3%],%orientation%)) 
 END
 
 IF
-	Clicked(Player6)
+	Clicked([ANYONE])
+	See(Player6)
+	Name("None",Player2)
 	ActuallyInCombat()
 THEN
 	RESPONSE #100
-		ActionOverride(NearestEnemyOf(Player6),EscapeAreaMove("%dest_name%",%x_point%,%y_point%,%orientation%)) 
-		ActionOverride(SecondNearestEnemyOf(Player6),EscapeAreaMove("%dest_name%",%x_pt2%,%y_point%,%orientation%)) 
-		ActionOverride(ThirdNearestEnemyOf(Player6),EscapeAreaMove("%dest_name%",%x_pt3%,%y_point%,%orientation%)) 
-		ActionOverride(FourthNearestEnemyOf(Player6),EscapeAreaMove("%dest_name%",%x_point%,%y_pt2%,%orientation%)) 
-		ActionOverride(FifthNearestEnemyOf(Player6),EscapeAreaMove("%dest_name%",%x_point%,%y_pt3%,%orientation%)) 
+		ActionOverride(NearestEnemyOf(Player6),MoveBetweenAreas("%dest_name%",[%x_point%.%y_point%],%orientation%)) 
+		ActionOverride(SecondNearestEnemyOf(Player6),MoveBetweenAreas("%dest_name%",[%x_pt2%.%y_point%],%orientation%)) 
+		ActionOverride(ThirdNearestEnemyOf(Player6),MoveBetweenAreas("%dest_name%",[%x_pt3%.%y_point%],%orientation%)) 
+		ActionOverride(FourthNearestEnemyOf(Player6),MoveBetweenAreas("%dest_name%",[%x_point%.%y_pt2%],%orientation%)) 
+		ActionOverride(FifthNearestEnemyOf(Player6),MoveBetweenAreas("%dest_name%",[%x_point%.%y_pt3%],%orientation%)) 
 END

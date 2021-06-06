@@ -6,7 +6,7 @@ DEFINE_ACTION_FUNCTION go_outside BEGIN
 	OUTER_SET script_num = 0
 
 	// Go through all the area files
-	COPY_EXISTING_REGEXP GLOB ~.*\.are~ ~override~
+	COPY_EXISTING_REGEXP GLOB ~.+\.ARE~ ~override~
 	
 		// Make sure we're dealing with an indoor location
 		READ_BYTE 0x48 area_loc		// Location
@@ -18,9 +18,9 @@ DEFINE_ACTION_FUNCTION go_outside BEGIN
 
 				// Make sure it's a travel region and that it can be normally used by NPCs
 				READ_SHORT (offset_region + 0x0020) region_type
-				READ_
+				READ_SHORT (offset_region + 0x0060) region_flags
 				
-				PATCH_IF (region_type = 2) BEGIN	// travel region
+				PATCH_IF ((region_type = 2) AND (region_flags BAND 0b0000001000000000) = 0b0000000000000000) BEGIN	// travel region and not pc only
 					// We need 3 things to write the script
 					// 1) the destinaton area
 					// 2) the destination entrance location (x,y)
@@ -70,8 +70,6 @@ DEFINE_ACTION_FUNCTION go_outside BEGIN
 							END
 							WRITE_EVALUATED_ASCII (offset_region + 0x007c) ~%script_name%~
 						END
-						
-						PATCH_PRINT ~SCRIPT NAME: %script_name%~
 						
 						INNER_ACTION BEGIN
 							LAF UPDATE_BCS
