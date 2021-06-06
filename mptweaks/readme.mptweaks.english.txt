@@ -18,7 +18,9 @@ DESCRIPTION
 ------------------------------------------------------------------------
 Take it outside
 ------------------------------------------------------------------------
-Mobs in combat will follow a group member outside through a door.  This is a one-way trip only.
+Up to 5 mobs in combat might follow a group member outside through a door.  
+This is a one-way trip only and is dependent upon timing so it may take more than one attempt to lure them out.
+The script is only applied to indoor areas whose travel regions are usable by NPCs.
 
 ------------------------------------------------------------------------
 COMPATABIITY NOTES
