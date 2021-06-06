@@ -1,0 +1,68 @@
+BACKUP ~weidu_external/backup/mptweaks~
+SUPPORT ~~
+VERSION ~v1~
+
+README ~mptweaks/readme.mptweaks.%LANGUAGE%.txt~ ~mptweaks/readme.mptweaks.english.txt~
+
+ALWAYS
+	ACTION_IF !VARIABLE_IS_SET deja_vu BEGIN
+		// Global static variables used by WeiDU
+		OUTER_SPRINT mod_root "mptweaks"
+		OUTER_SPRINT external_loc "weidu_external"
+		OUTER_SPRINT tra_base "languages"
+		OUTER_SPRINT base_language "american"
+		OUTER_SPRINT workspace "%external_loc%/workspace/%mod_root%"
+		OUTER_SPRINT tra_loc "%workspace%/%tra_base%"
+
+		// Makes external working directories	
+		// And copies language files to them
+		INCLUDE ~%mod_root%/lib/run_once.tpa~
+		LAF DO_RUN_ONCE END
+
+		// Variables used to point to files and stuff
+		INCLUDE ~%mod_root%/lib/#l_cmpvars.tpa~
+
+		// Library functions I use frequently
+		INCLUDE ~%mod_root%/lib/alter_script.tpa~
+		INCLUDE ~%mod_root%/lib/update_bcs.tpa~
+	END
+
+	// This needs to be run before every component for some reason
+	// It has something to do with languages that use a different character set
+	ACTION_DEFINE_ARRAY thismod_noconvert BEGIN setup END
+
+	LAF HANDLE_CHARSETS 
+		INT_VAR 
+			infer_charsets = 1 
+		STR_VAR 
+			iconv_path = EVAL "%mod_root%/%tra_base%/iconv"
+			tra_path = EVAL "%tra_loc%"
+			noconvert_array = thismod_noconvert
+	END
+
+	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
+		FAIL @1 /* ~Argent's DLC Merger is required before mods can be installed on this game.~ */
+	END
+	ACTION_IF NOT GAME_IS ~bgee bg2ee eet~ BEGIN
+		FAIL @2 /* ~This mod requires BGEE, BG2EE or EET~ */
+	END
+
+	ACTION_IF !VARIABLE_IS_SET deja_vu BEGIN
+		OUTER_SET deja_vu = 1
+	END
+END
+
+// Can't use variables here for some reason
+// Not sure why we use both folders, but that's what the example did
+LANGUAGE ~American English~ ~american~   
+	~mptweaks/languages/american/setup.tra~
+	~weidu_external/workspace/mptweaks/languages/american/setup.tra~
+
+////////////////////////////////////////////////
+// PPROVIDE 2 DIFFERENT VERSIONS OF CHAPTER 6 //
+////////////////////////////////////////////////
+BEGIN @10	// Mod 0
+	LABEL "#L-MPTWEAKS-GO_OUTSIDE"
+	INCLUDE ~mptweaks/components/go_outside.tpa~
+	LAF go_outside END
+

@@ -1,0 +1,90 @@
+/////////////////////////////////////////////////
+// Forces mobs in combat to follow PCs outside //
+/////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION go_outside BEGIN
+	OUTER_SET script_num = 0
+
+	// Go through all the area files
+	COPY_EXISTING_REGEXP GLOB ~.*\.are~ ~override~
+	
+		// Make sure we're dealing with an indoor location
+		READ_BYTE 0x48 area_loc		// Location
+		PATCH_IF ((area_loc BAND 0b00000001) = 0b00000000) BEGIN	// inside
+
+			// Go through all of the area's regions
+			GET_OFFSET_ARRAY array_off_regions ARE_V10_REGIONS
+			PHP_EACH array_off_regions AS idx_region => offset_region BEGIN
+
+				// Make sure it's a travel region and that it can be normally used by NPCs
+				READ_SHORT (offset_region + 0x0020) region_type
+				READ_
+				
+				PATCH_IF (region_type = 2) BEGIN	// travel region
+					// We need 3 things to write the script
+					// 1) the destinaton area
+					// 2) the destination entrance location (x,y)
+					// 3) the direction they should face
+					READ_ASCII offset_region region_name
+					READ_ASCII (offset_region + 0x0038) dest_name
+					READ_ASCII (offset_region + 0x0040) entrance_name
+					
+					// Open the destination region to determine the coordinates of the target entrance
+					SET found = 0
+					INNER_PATCH_FILE ~%dest_name%.are~ BEGIN
+						
+						// Find the entrance
+						GET_OFFSET_ARRAY array_off_entrances ARE_V10_ENTRANCES
+						PHP_EACH array_off_entrances AS idx_entrance => offset_entrance BEGIN
+							READ_ASCII (offset_entrance) this_ent_name
+							PATCH_IF ~%this_ent_name%~ STRING_EQUAL_CASE ~%entrance_name%~ BEGIN
+								SET found = 1
+								READ_SHORT (offset_entrance + 0x0020) x_point
+								READ_SHORT (offset_entrance + 0x0022) y_point
+								READ_SHORT (offset_entrance + 0x0024) orientation
+								SET x_pt2 = %x_point% - 50
+								SET x_pt3 = %x_point% + 50
+								SET y_pt2 = %y_point% - 50
+								SET y_pt3 = %y_point% + 50	
+							END
+						END
+					END
+					
+					PATCH_IF found = 1 BEGIN
+						// See if there's already a script on this region
+						SET script_exists = 1
+						READ_ASCII (offset_region + 0x007c) script_name
+						
+						PATCH_IF (~%script_name%~ STRING_EQUAL_CASE ~~) BEGIN
+							// Insert the next custom script name into the region
+							SET script_exists = 0
+							SET script_num += 1
+							PATCH_IF %script_num% < 10 BEGIN
+								SPRINT script_name ~#LGo000%script_num%~
+							END ELSE PATCH_IF %script_num% < 100 BEGIN
+								SPRINT script_name ~#LGo00%script_num%~
+							END ELSE PATCH_IF %script_num% < 1000 BEGIN
+								SPRINT script_name ~#LGo0%script_num%~
+							END ELSE BEGIN
+								SPRINT script_name ~#LGo%script_num%~
+							END
+							WRITE_EVALUATED_ASCII (offset_region + 0x007c) ~%script_name%~
+						END
+						
+						PATCH_PRINT ~SCRIPT NAME: %script_name%~
+						
+						INNER_ACTION BEGIN
+							LAF UPDATE_BCS
+								STR_VAR
+									baf_location = EVAL ~%mod_root%/scripts/~
+									baf_name = ~go_outside~
+									bcs_name = ~%script_name%~
+							END
+						END
+					END
+					
+				END
+			END
+		END
+	BUT_ONLY_IF_IT_CHANGES
+END
