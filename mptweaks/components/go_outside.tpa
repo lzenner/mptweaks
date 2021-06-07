@@ -8,6 +8,9 @@ DEFINE_ACTION_FUNCTION go_outside BEGIN
 	// Go through all the area files
 	COPY_EXISTING_REGEXP GLOB ~.+\.ARE~ ~override~
 	
+		// Set the area name we're dealing with to a variable so it doesn't get lost in the shuffle
+		SPRINT my_area %SOURCE_RES%
+	
 		// Make sure we're dealing with an indoor location
 		READ_BYTE 0x48 area_loc		// Location
 		PATCH_IF ((area_loc BAND 0b00000001) = 0b00000000) BEGIN	// inside
