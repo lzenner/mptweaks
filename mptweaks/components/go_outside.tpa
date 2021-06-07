@@ -54,12 +54,10 @@ DEFINE_ACTION_FUNCTION go_outside BEGIN
 					
 					PATCH_IF found = 1 BEGIN
 						// See if there's already a script on this region
-						SET script_exists = 1
 						READ_ASCII (offset_region + 0x007c) script_name
 						
 						PATCH_IF (~%script_name%~ STRING_EQUAL_CASE ~~) BEGIN
 							// Insert the next custom script name into the region
-							SET script_exists = 0
 							SET script_num += 1
 							PATCH_IF %script_num% < 10 BEGIN
 								SPRINT script_name ~#LGo000%script_num%~
