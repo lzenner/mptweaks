@@ -23,12 +23,11 @@ DEFINE_ACTION_FUNCTION go_outside BEGIN
 				READ_SHORT (offset_region + 0x0020) region_type
 				READ_SHORT (offset_region + 0x0060) region_flags
 				
-				PATCH_IF ((region_type = 2) AND (region_flags BAND 0b0000001000000000) = 0b0000000000000000) BEGIN	// travel region and not pc only
+				PATCH_IF ((region_type = 2) AND ((region_flags BAND 0b0000001000000000) = 0b0000000000000000)) BEGIN	// travel region and not pc only
 					// We need 3 things to write the script
 					// 1) the destinaton area
 					// 2) the destination entrance location (x,y)
 					// 3) the direction they should face
-					READ_ASCII offset_region region_name
 					READ_ASCII (offset_region + 0x0038) dest_name
 					READ_ASCII (offset_region + 0x0040) entrance_name
 					
