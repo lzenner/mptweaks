@@ -4,6 +4,7 @@
 
 IF
 	Clicked([ANYONE])
+	Global("#LNoGo","MYAREA",0)
 	See(Player1)
 	NumInPartyGT(1)
 	Name("None",Player2)
@@ -19,6 +20,7 @@ END
 							
 IF
 	Clicked([ANYONE])
+	Global("#LNoGo","MYAREA",0)
 	See(Player2)
 	Name("None",Player2)
 	ActuallyInCombat()
@@ -33,6 +35,7 @@ END
 
 IF
 	Clicked([ANYONE])
+	Global("#LNoGo","MYAREA",0)
 	See(Player3)
 	Name("None",Player2)
 	ActuallyInCombat()
@@ -47,6 +50,7 @@ END
 
 IF
 	Clicked([ANYONE])
+	Global("#LNoGo","MYAREA",0)
 	See(Player4)
 	Name("None",Player2)
 	ActuallyInCombat()
@@ -61,6 +65,7 @@ END
 
 IF
 	Clicked([ANYONE])
+	Global("#LNoGo","MYAREA",0)
 	See(Player5)
 	Name("None",Player2)
 	ActuallyInCombat()
@@ -75,6 +80,7 @@ END
 
 IF
 	Clicked([ANYONE])
+	Global("#LNoGo","MYAREA",0)
 	See(Player6)
 	Name("None",Player2)
 	ActuallyInCombat()
