@@ -23,7 +23,6 @@ ALWAYS
 		INCLUDE ~%mod_root%/lib/#l_cmpvars.tpa~
 
 		// Library functions I use frequently
-		INCLUDE ~%mod_root%/lib/alter_script.tpa~
 		INCLUDE ~%mod_root%/lib/update_bcs.tpa~
 	END
 

@@ -58,8 +58,10 @@ CREDITS
 ------------------------------------------------------------------------
 * BeamDog / Overhaul Games: for the Infinity Engine and inspiring this mod
 * K4thos: for EET - even though it's not required for this mod, I just really like EET
-* DavidW: for the lovely macros included in alter_script.tpa as well as guidance on encapsulation and immutability
+* DavidW: for his guidance on encapsulation and immutability
 * Bubb and CamDawg - LOVE YOU FOREVER!!!  I mean it.  Forevah!
+* Bubb for discovering the reason why mobs don't normally follow through exits in a multiplayer session
+^ CamDawg for his help with INNER_ACTION and SOURCE_RES
 * jastey: for everything you've done and continue to do. :)
 * lynx: for help with using LastTrigger
 * The folks at The Gibberlings Three forums: for never failing to answer my many many questions
