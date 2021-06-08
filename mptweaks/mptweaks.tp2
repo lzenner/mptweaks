@@ -58,9 +58,9 @@ LANGUAGE ~American English~ ~american~
 	~mptweaks/languages/american/setup.tra~
 	~weidu_external/workspace/mptweaks/languages/american/setup.tra~
 
-////////////////////////////////////////////////
-// PPROVIDE 2 DIFFERENT VERSIONS OF CHAPTER 6 //
-////////////////////////////////////////////////
+////////////////////////////////////////
+// ALLOW MOBS TO FOLLOW THROUGH EXITS //
+////////////////////////////////////////
 BEGIN @10	// Mod 0
 	LABEL "#L-MPTWEAKS-GO_OUTSIDE"
 	INCLUDE ~mptweaks/components/go_outside.tpa~
