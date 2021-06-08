@@ -7,7 +7,7 @@
 ------------------------------------------------------------------------
 GENERAL
 ------------------------------------------------------------------------
-This mod requires BGEE, BG2EE or EET
+This mod is compatible with all IE games except for IWD2.
 
 The MPTweaks mod fixes a couple of issues in multiplayer sessions.
 
@@ -36,8 +36,6 @@ NOTE: If you've previously installed the mod, remove it before extracting a new 
 
 When installing or uninstalling, do not close the DOS window by clicking on the X button! Instead, press the Enter key when instructed to do so.
 
-IMPORTANT FOR EET INSTALLATIONS: EET_End will need to be reinstalled after installing this mod.
- 
 General (Windows, Mac OS X, and Linux)
 
 Extract the contents of the mod archive to your game's main directory. 
@@ -53,7 +51,7 @@ Linux
 Extract the contents of the mod to the folder of the game you wish to modify. Download the latest version of WeiDU for Linux from https://github.com/WeiDUorg/weidu/releases and copy WeiDU and WeInstall to /usr/bin. Following that, open a terminal and cd to your EET installation directory, run 'tolower' and answer Y to both queries. You can avoid running the second option (linux.ini) if you've already run it once in the same directory. If you're unsure, running tolower and choosing both options is the safest bet.
 Run WeInstall mptweaks in your game folder to install the mod. Then run wine BGMain.exe and start playing. 
 
-If you have installation problems or encounter any bugs, please post your bug report in the forum thread: https://www.gibberlings3.net/forums/topic/?????/.
+If you have installation problems or encounter any bugs, please post your bug report in the forum thread: https://www.gibberlings3.net/forums/topic/32809-multiplayer-tweaks-fixes-for-multiplayer-sessions/
 
 ------------------------------------------------------------------------
 CREDITS
@@ -81,7 +79,8 @@ The Gibberlings Three	http://gibberlings3.net
 ------------------------------------------------------------------------
 HISTORY
 ------------------------------------------------------------------------
-still in development
+* v1 - initial public release
+* v2 - simplification of region script and a spell to temporarily stop mobs from follow through a room's exit
 
 ------------------------------------------------------------------------
 LEGAL INFORMATION
