@@ -63,6 +63,7 @@ CREDITS
 * DavidW: for the lovely macros included in alter_script.tpa as well as guidance on encapsulation and immutability
 * Bubb and CamDawg - LOVE YOU FOREVER!!!  I mean it.  Forevah!
 * jastey: for everything you've done and continue to do. :)
+* lynx: for help with using LastTrigger
 * The folks at The Gibberlings Three forums: for never failing to answer my many many questions
 
 ------------------------------------------------------------------------
