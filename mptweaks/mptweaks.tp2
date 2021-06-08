@@ -1,6 +1,6 @@
 BACKUP ~weidu_external/backup/mptweaks~
 SUPPORT ~~
-VERSION ~v1~
+VERSION ~v2~
 
 README ~mptweaks/readme.mptweaks.%LANGUAGE%.txt~ ~mptweaks/readme.mptweaks.english.txt~
 
