@@ -63,7 +63,9 @@ CREDITS
 * Bubb for discovering the reason why mobs don't normally follow through exits in a multiplayer session
 ^ CamDawg for his help with INNER_ACTION and SOURCE_RES
 * jastey: for everything you've done and continue to do. :)
+* Grammarsalad: for idea for allowing a spell to override mobs ability to pass
 * lynx: for help with using LastTrigger
+* kjeron: for help with long area names 
 * The folks at The Gibberlings Three forums: for never failing to answer my many many questions
 
 ------------------------------------------------------------------------
@@ -82,7 +84,7 @@ The Gibberlings Three	http://gibberlings3.net
 HISTORY
 ------------------------------------------------------------------------
 * v1 - initial public release
-* v2 - simplification of region script and a spell to temporarily stop mobs from follow through a room's exit
+* v1.1 - simplification of region script, bug fix for long area names and added a variable check before allowing the transfer 
 
 ------------------------------------------------------------------------
 LEGAL INFORMATION
