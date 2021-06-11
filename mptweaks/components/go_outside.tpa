@@ -72,6 +72,9 @@ DEFINE_ACTION_FUNCTION go_outside BEGIN
 						END
 						
 						INNER_ACTION BEGIN
+							ACTION_IF STRING_LENGTH ~%my_area%~ > 6 BEGIN
+								OUTER_SPRINT my_area ~MYAREA~
+							END
 							LAF UPDATE_BCS
 								STR_VAR
 									baf_location = EVAL ~%mod_root%/scripts/~
