@@ -2,10 +2,7 @@
 ---            Multiplayer Tweaks             ---
 -------------------------------------------------
 
-This mod requires BGEE, BG2EE or EET
-
-Multiplayer fixes for BGEE, BG2EE and EET
-
+This mod is compatible with all IE games except for IWD2.
 
 Components 
 ---------- 
