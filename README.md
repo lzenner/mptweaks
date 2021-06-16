@@ -11,4 +11,4 @@ Components
 ---------- 
 * Take it outside - mobs follow through doors
 	* By Lauriel
-	* With counterspell by Grammarsalad
+	* With counterspell by Grammarsalad (coming soon)
