@@ -10,4 +10,5 @@ Multiplayer fixes for BGEE, BG2EE and EET
 Components 
 ---------- 
 * Take it outside - mobs follow through doors
-	With counterspell by Grammarsalad
+	* By Lauriel
+	* With counterspell by Grammarsalad
