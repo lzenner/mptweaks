@@ -60,8 +60,18 @@ LANGUAGE ~American English~ ~american~
 ////////////////////////////////////////
 // ALLOW MOBS TO FOLLOW THROUGH EXITS //
 ////////////////////////////////////////
-BEGIN @10	// Mod 0
+BEGIN @10	// Mod 10
+	DESIGNATED 10
 	LABEL "#L-MPTWEAKS-GO_OUTSIDE"
 	INCLUDE ~mptweaks/components/go_outside.tpa~
 	LAF go_outside END
+
+//////////////////////////////////////////////////
+// PAUSE WHEN NPCS TURN HOSTILE DURING DIALOGUE //
+//////////////////////////////////////////////////
+BEGIN @20	// Mod 20
+	DESIGNATED 20
+	LABEL "#L-MPTWEAKS-ENEMY_PAUSE"
+	INCLUDE ~mptweaks/components/enemy_pause.tpa~
+	LAF enemy_pause END
 

@@ -23,6 +23,13 @@ This is a one-way trip only and is dependent upon timing so it may take more tha
 The script is only applied to indoor areas whose travel regions are usable by NPCs.
 
 ------------------------------------------------------------------------
+Pause game when NPCs turn hostile during dialogue
+------------------------------------------------------------------------
+The pause is not instant.
+There has to be a period of time between the dialogue ending and the game being paused when in multiplayer.
+The script waits the shortest amount of time possible before pausing the game.
+
+------------------------------------------------------------------------
 COMPATABIITY NOTES
 ------------------------------------------------------------------------
 There are no known compatibility issues at this time
@@ -30,7 +37,7 @@ There are no known compatibility issues at this time
 ------------------------------------------------------------------------
 INSTALLATION
 ------------------------------------------------------------------------
-Installation using Project Infinity (https://forums.beamdog.com/discussion/74335/project-infinity-mod-manager-for-baldurs-gate-icewind-dale-planescape-torment-and-eet) will ensure this and other mods are installed in the correct order.
+Installation using Project Infinity (https://forums.beamdog.com/discussion/74335/project-infinity-mod-manager-for-baldurs-gate-icewind-dale-planescape-torment-and-eet) will ensure this and other mods are installed in the correct order. Generally though, the mod should be installed after all dialogue and areas have been added and can safely be added after EET_end.
 
 NOTE: If you've previously installed the mod, remove it before extracting a new version. To do this, uninstall all previously installed components and delete the mod folder and executables. 
 
@@ -84,7 +91,8 @@ The Gibberlings Three	http://gibberlings3.net
 HISTORY
 ------------------------------------------------------------------------
 * v1 - initial public release
-* v1.1 - simplification of region script, bug fix for long area names and added a variable check before allowing the transfer 
+* v1.1 - simplification of region script, bug fix for long area names and added a variable check before allowing the transfer
+* v2 - implemented Designated tags in the TP2 file and added a new component (Pause game when NPCs turn hostile during dialogue)
 
 ------------------------------------------------------------------------
 LEGAL INFORMATION

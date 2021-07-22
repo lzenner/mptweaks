@@ -1,0 +1,41 @@
+///////////////////////////////////////////////////////////////////////////
+// Forces the game to pause when NPCs turn into enemies after a dialogue //
+///////////////////////////////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION enemy_pause BEGIN
+	// Add block to player script
+	EXTEND_TOP ~DPLAYER3.BCS~ ~%mod_root%/scripts/#LPause.baf~
+	
+	// Go through all the dialogue files
+	COPY_EXISTING_REGEXP GLOB ~.+\.dlg~ ~override~
+		// Go through all the file's actions
+		READ_LONG (0x0028) offset_actions
+		READ_LONG (0x002c) num_actions
+		
+		FOR (idx_action = 0; idx_action < num_actions; ++idx_action) BEGIN
+			// Get the start and length of the action string
+			READ_LONG (offset_actions + (idx_action * 0x0008)) offset_string 
+			READ_LONG (offset_actions + 0x0004 + (idx_action * 0x0008)) len_string
+
+			// Fetch the current action string
+			READ_ASCII offset_string cur_string (len_string)
+			
+			// See if it contains the word 'Enemy()'
+			PATCH_IF ("%cur_string%" STRING_CONTAINS_REGEXP "Enemy()") = 0 BEGIN				
+				// Add 'PauseGame()' to the end of the command string
+				INSERT_BYTES (offset_string + len_string) 0x001f
+				WRITE_ASCII (offset_string + len_string) ~SetGlobal("#LPause","GLOBAL",1)~
+				
+				// Update the string length in the section header
+				WRITE_LONG (offset_actions + 0x0004 + (idx_action * 0x0008)) (len_string + 0x001f)
+				
+				// Update all the following string starting positions
+				FOR (next_action = (idx_action + 1); next_action < num_actions; ++next_action) BEGIN
+					READ_LONG (offset_actions + (next_action * 0x0008)) offset_next
+					WRITE_LONG (offset_actions + (next_action * 0x0008)) (offset_next + 0x001f)
+				END
+			END
+		END
+		
+	BUT_ONLY_IF_IT_CHANGES
+END
