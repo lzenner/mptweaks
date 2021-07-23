@@ -9,3 +9,5 @@ Components
 * Take it outside - mobs follow through doors
 	* By Lauriel
 	* With counterspell by Grammarsalad (coming soon)
+	
+* Pause Game when NPC turns hostile during dialogue by Lauriel
