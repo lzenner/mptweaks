@@ -1,13 +1,13 @@
 -------------------------------------------------
 ---            Multiplayer Tweaks             ---
----          for BGEE BG2EE and EET           ---
+---               for IE Games                ---
 -------------------------------------------------
 
 
 ------------------------------------------------------------------------
 GENERAL
 ------------------------------------------------------------------------
-This mod is compatible with all IE games except for IWD2.
+This mod is compatible with all IE games except the first component cannot be installed on IWD2.
 
 The MPTweaks mod fixes a couple of issues in multiplayer sessions.
 
