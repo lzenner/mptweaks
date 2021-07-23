@@ -28,6 +28,7 @@ Pause game when NPCs turn hostile during dialogue
 The pause is not instant.
 There has to be a period of time between the dialogue ending and the game being paused when in multiplayer.
 The script waits the shortest amount of time possible before pausing the game.
+The functionality is tied to the player's AI.  If AI is turned off, the game won't pause.
 
 ------------------------------------------------------------------------
 COMPATABIITY NOTES

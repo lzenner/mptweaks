@@ -42,9 +42,6 @@ ALWAYS
 	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
 		FAIL @1 /* ~Argent's DLC Merger is required before mods can be installed on this game.~ */
 	END
-	ACTION_IF GAME_IS ~iwd2~ THEN BEGIN
-		FAIL @2 /* This mod modifies area files so cannot be used on IWD2 games */
-	END
 
 	ACTION_IF !VARIABLE_IS_SET deja_vu BEGIN
 		OUTER_SET deja_vu = 1
@@ -61,8 +58,9 @@ LANGUAGE ~American English~ ~american~
 // ALLOW MOBS TO FOLLOW THROUGH EXITS //
 ////////////////////////////////////////
 BEGIN @10	// Mod 10
-	DESIGNATED 10
+fs	DESIGNATED 10
 	LABEL "#L-MPTWEAKS-GO_OUTSIDE"
+	REQUIRE_PREDICATE !(GAME_IS ~iwd2~) @2
 	INCLUDE ~mptweaks/components/go_outside.tpa~
 	LAF go_outside END
 
