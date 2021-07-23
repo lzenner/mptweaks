@@ -10,4 +10,4 @@ Components
 	* By Lauriel
 	* With counterspell by Grammarsalad (coming soon)
 	
-* Pause Game when NPC turns hostile during dialogue by Lauriel
+* Pause game when NPCs turn hostile during dialogue by Lauriel
