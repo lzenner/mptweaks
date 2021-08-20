@@ -11,7 +11,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("#LPause","GLOBAL",0)
 		Wait(1)
-		SmallWait(3)
+		SmallWait(4)
 		PauseGame()
 		Continue()
 END
