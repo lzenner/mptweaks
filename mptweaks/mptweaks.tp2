@@ -58,7 +58,7 @@ LANGUAGE ~American English~ ~american~
 // ALLOW MOBS TO FOLLOW THROUGH EXITS //
 ////////////////////////////////////////
 BEGIN @10	// Mod 10
-fs	DESIGNATED 10
+	DESIGNATED 10
 	LABEL "#L-MPTWEAKS-GO_OUTSIDE"
 	REQUIRE_PREDICATE !(GAME_IS ~iwd2~) @2
 	INCLUDE ~mptweaks/components/go_outside.tpa~
