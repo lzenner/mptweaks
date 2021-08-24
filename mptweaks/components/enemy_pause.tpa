@@ -20,8 +20,8 @@ DEFINE_ACTION_FUNCTION enemy_pause BEGIN
 			// Fetch the current action string
 			READ_ASCII offset_string cur_string (len_string)
 			
-			// See if it contains the word 'Enemy()'
-			PATCH_IF ("%cur_string%" STRING_CONTAINS_REGEXP "Enemy()") = 0 BEGIN				
+			// See if it contains the word 'Enemy()' or DOPPGANGER_CHANGE
+			PATCH_IF ("%cur_string%" STRING_CONTAINS_REGEXP "Enemy()") = 0 OR ("%cur_string%" STRING_CONTAINS_REGEXP "DOPPLEGANGER_CHANGE_DEFAULT") = 0 BEGIN				
 				// Add 'PauseGame()' to the end of the command string
 				INSERT_BYTES (offset_string + len_string) 0x001f
 				WRITE_ASCII (offset_string + len_string) ~SetGlobal("#LPause","GLOBAL",1)~
