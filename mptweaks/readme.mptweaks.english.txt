@@ -95,6 +95,7 @@ HISTORY
 * v1.1 - simplification of region script, bug fix for long area names and added a variable check before allowing the transfer
 * v2 - implemented Designated tags in the TP2 file and added a new component (Pause game when NPCs turn hostile during dialogue)
 * v2.1 - corrected a typo that would cause the install to fail and wait a bit longer to pause
+* v2.2 - adds pause on doppleganger, loupgar, and wolfwere changes
 
 ------------------------------------------------------------------------
 LEGAL INFORMATION
