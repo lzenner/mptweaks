@@ -39,6 +39,8 @@ DEFINE_ACTION_FUNCTION enemy_pause BEGIN
 	// Add a small script block to all scripts stopping execution while #LPause = 1
 	COPY_EXISTING_REGEXP GLOB ~.+\.bcs~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Enemy() ~ ~Enemy() SetGlobal("#LPause","GLOBAL",1) ~ 
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Enemy())~ ~Enemy()) SetGlobal("#LPause","GLOBAL",1)~ 
 			PATCH_IF (~%SOURCE_RES%~ STRING_EQUAL_CASE ~BALDUR~) = 1 BEGIN
 				// Add block to world script
 				INSERT_FILE 0 ~%mod_root%/scripts/#LPause1.baf~

@@ -5,6 +5,17 @@
 
 IF
 	Global("#LPause","GLOBAL",1)
+	OR(2)
+		NumInParty(1)
+		!Name("None",Player2)
+THEN
+	RESPONSE #100
+		SetGlobal("#LPause","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("#LPause","GLOBAL",1)
 	NumInPartyGT(1)
 	Name("None",Player2)
 	Global("#LPause_Delay","GLOBAL",0)
