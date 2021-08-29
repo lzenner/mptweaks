@@ -1,0 +1,28 @@
+////////////////////////////////////////////////////////////
+// Script to pause when NPCs go hostile during a dialogue //
+// For Multiplayer games only                             //
+////////////////////////////////////////////////////////////
+
+IF
+	Global("#LPause","GLOBAL",1)
+	NumInPartyGT(1)
+	Name("None",Player2)
+	Global("#LPause_Delay","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#LPause_Delay","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("#LPause","GLOBAL",1)
+	NumInPartyGT(1)
+	Name("None",Player2)
+	!Global("#LPause_Delay","GLOBAL",0)
+	GlobalTimerExpired("#LPause_Delay","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("#LPause","GLOBAL",0)
+		SetGlobal("#LPause_Delay","GLOBAL",0)
+		ActionOverride(Player1,PauseGame())
+END

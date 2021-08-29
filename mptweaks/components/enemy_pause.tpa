@@ -3,9 +3,6 @@
 ///////////////////////////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION enemy_pause BEGIN
-	// Add block to player script
-	EXTEND_TOP ~DPLAYER3.BCS~ ~%mod_root%/scripts/#LPause.baf~
-	
 	// Go through all the dialogue files
 	COPY_EXISTING_REGEXP GLOB ~.+\.dlg~ ~override~
 		// Go through all the file's actions
@@ -38,4 +35,16 @@ DEFINE_ACTION_FUNCTION enemy_pause BEGIN
 		END
 		
 	BUT_ONLY_IF_IT_CHANGES
+	
+	// Add a small script block to all scripts stopping execution while #LPause = 1
+	COPY_EXISTING_REGEXP GLOB ~.+\.bcs~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			PATCH_IF (~%SOURCE_RES%~ STRING_EQUAL_CASE ~BALDUR~) = 1 BEGIN
+				// Add block to world script
+				INSERT_FILE 0 ~%mod_root%/scripts/#LPause1.baf~
+			END ELSE BEGIN
+				INSERT_FILE 0 ~%mod_root%/scripts/#LPause2.baf~
+			END
+		END
+	
 END

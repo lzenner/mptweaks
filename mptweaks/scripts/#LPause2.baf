@@ -9,9 +9,6 @@ IF
 	Name("None",Player2)
 THEN
 	RESPONSE #100
-		SetGlobal("#LPause","GLOBAL",0)
-		Wait(1)
-		SmallWait(4)
-		PauseGame()
-		Continue()
+		NoAction()
 END
+
