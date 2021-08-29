@@ -28,7 +28,8 @@ Pause game when NPCs turn hostile during dialogue
 The pause is not instant.
 There has to be a period of time between the dialogue ending and the game being paused when in multiplayer.
 The script waits the shortest amount of time possible before pausing the game.
-The functionality is tied to the player's AI.  If AI is turned off, the game won't pause.
+All scripts are put on hold until the pause is set so that NPCs don't get free-shots during the delay
+The functionality is no longer tied to the player's AI.
 
 ------------------------------------------------------------------------
 COMPATABIITY NOTES
@@ -96,6 +97,7 @@ HISTORY
 * v2 - implemented Designated tags in the TP2 file and added a new component (Pause game when NPCs turn hostile during dialogue)
 * v2.1 - corrected a typo that would cause the install to fail and wait a bit longer to pause
 * v2.2 - adds pause on doppleganger, loupgar, and wolfwere changes
+* v2.3 - scripts are put on hold until the pause is set so that NPCs don't get free-shots during the delay
 
 ------------------------------------------------------------------------
 LEGAL INFORMATION
