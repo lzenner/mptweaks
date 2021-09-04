@@ -18,7 +18,8 @@ DEFINE_ACTION_FUNCTION enemy_pause BEGIN
 			READ_ASCII offset_string cur_string (len_string)
 			
 			// See if it contains the word 'Enemy()' or DOPPGANGER_CHANGE
-			PATCH_IF ("%cur_string%" STRING_CONTAINS_REGEXP "Enemy()") = 0 OR ("%cur_string%" STRING_CONTAINS_REGEXP "DOPPLEGANGER_CHANGE") = 0 OR ("%cur_string%" STRING_CONTAINS_REGEXP "LOUPGAR_CHANGE") = 0 OR("%cur_string%" STRING_CONTAINS_REGEXP "WOLFWERE_CHANGE") = 0 OR ("%cur_string%" STRING_CONTAINS_REGEXP "SLAYER_CHANGE") = 0 BEGIN				
+			// Also adding one special case at the end of Durlag's Tower
+			PATCH_IF ("%cur_string%" STRING_CONTAINS_REGEXP "Enemy()") = 0 OR ("%cur_string%" STRING_CONTAINS_REGEXP "DOPPLEGANGER_CHANGE") = 0 OR ("%cur_string%" STRING_CONTAINS_REGEXP "LOUPGAR_CHANGE") = 0 OR("%cur_string%" STRING_CONTAINS_REGEXP "WOLFWERE_CHANGE") = 0 OR("%cur_string%" STRING_CONTAINS_REGEXP "WEREWOLF_CHANGE") = 0 OR ("%cur_string%" STRING_CONTAINS_REGEXP "SLAYER_CHANGE") = 0 OR ("%cur_string%" STRING_CONTAINS_REGEXP ~SetGlobal("Cult1","GLOBAL",1)~) = 0 BEGIN				
 				// Add 'PauseGame()' to the end of the command string
 				INSERT_BYTES (offset_string + len_string) 0x001f
 				WRITE_ASCII (offset_string + len_string) ~SetGlobal("#LPause","GLOBAL",1)~
