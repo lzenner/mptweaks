@@ -32,6 +32,11 @@ All scripts are put on hold until the pause is set so that NPCs don't get free-s
 The functionality is no longer tied to the player's AI.
 
 ------------------------------------------------------------------------
+Eltan multiplayer compatibility
+------------------------------------------------------------------------
+Stops the Eltan mod's dialogues from pausing the game
+
+------------------------------------------------------------------------
 COMPATABIITY NOTES
 ------------------------------------------------------------------------
 There are no known compatibility issues at this time
@@ -98,6 +103,7 @@ HISTORY
 * v2.1 - corrected a typo that would cause the install to fail and wait a bit longer to pause
 * v2.2 - adds pause on doppleganger, loupgar, and wolfwere changes
 * v2.3 - scripts are put on hold until the pause is set so that NPCs don't get free-shots during the delay
+* v3.0 - added a new component (multiplayer compatibility for the Eltan mod)
 
 ------------------------------------------------------------------------
 LEGAL INFORMATION

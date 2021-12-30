@@ -1,6 +1,6 @@
 BACKUP ~weidu_external/backup/mptweaks~
 SUPPORT ~For help troubleshooting installation problems, go to  https://www.gibberlings3.net/forums/topic/32809-multiplayer-tweaks-fixes-for-multiplayer-sessions-for-bgee-bg2ee-and-eet/~
-VERSION ~v2.3~
+VERSION ~v3.0~
 
 README ~mptweaks/readme.mptweaks.%LANGUAGE%.txt~ ~mptweaks/readme.mptweaks.english.txt~
 
@@ -72,4 +72,14 @@ BEGIN @20	// Mod 20
 	LABEL "#L-MPTWEAKS-ENEMY_PAUSE"
 	INCLUDE ~mptweaks/components/enemy_pause.tpa~
 	LAF enemy_pause END
+
+////////////////////////////
+// ELTAN MP COMPATIBILITY //
+////////////////////////////
+BEGIN @30	// Mod 30
+	DESIGNATED 30
+	LABEL "#L-MPTWEAKS-ELTAN"
+	REQUIRE_PREDICATE (MOD_IS_INSTALLED ~eltan.tp2~ 10) @3 // ~This component requires the Eltan mod~
+	INCLUDE ~mptweaks/components/eltan.tpa~
+	LAF eltan END
 

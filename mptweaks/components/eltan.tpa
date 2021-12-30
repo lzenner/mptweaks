@@ -1,0 +1,11 @@
+///////////////////////////////////////////////////////////
+// Stops the Eltan mod's dialogues from pausing the game //
+///////////////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION eltan BEGIN
+	// Stop the Eltan mod's dialogues from pausing the game for everyone
+	COPY_EXISTING ~#LDELTAN.DLG~ ~override~
+		WRITE_LONG 0x0030 4		// Multiplayer support
+	COPY_EXISTING ~#LEMATCH.DLG~ ~override~
+		WRITE_LONG 0x0030 4		// Multiplayer support
+END

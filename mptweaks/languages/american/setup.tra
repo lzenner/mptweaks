@@ -4,6 +4,8 @@
 @0 		= ~Multiplayer Tweaks~
 @1		= ~Argent's DLC Merger is required before mods can be installed on this game.~
 @2		= ~This component modifies area files so cannot be used on IWD2 games~
+@3		= ~This component requires the Eltan mod~
 
 @10		= ~Take it outside - mobs follow through doors~
 @20		= ~Pause game when NPCs turn hostile during dialogue~
+@30		= ~Eltan multiplayer compatibility~
